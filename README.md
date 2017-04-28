@@ -40,6 +40,7 @@ Just use `-h` flag to print it out:
 
 ```
 $ checkit -h
+
 Usage of ./bin/checkit:
   -duration float
     	How long to run the check for (in minutes) (default 5)
@@ -55,7 +56,8 @@ Usage of ./bin/checkit:
 Launch against the default URL, run for 1 minute at a 500 milliseconds frequency:
 
 ```
-$ ./bin/checkit -duration=1 -frequency=500
+$ checkit -duration=1 -frequency=500
+
 2017/04/28 12:18:28 Checking URL 'https://gitlab.com'
 2017/04/28 12:18:28 Running for 1.0 minute(s) at a 500 millisecond(s) frequency
 2017/04/28 12:18:28 
@@ -74,7 +76,8 @@ $ ./bin/checkit -duration=1 -frequency=500
 Launch against `https://youtube.com`, run for 2 minutes at a 300 milliseconds frequency:
 
 ```
-checkit -url https://youtube.com -duration 2 -frequency 300
+$ checkit -url https://youtube.com -duration 2 -frequency 300
+
 2017/04/28 13:12:50 Checking URL 'https://youtube.com'
 2017/04/28 13:12:50 Running for 2.0 minute(s) at a 300 millisecond(s) frequency
 2017/04/28 13:12:50 
