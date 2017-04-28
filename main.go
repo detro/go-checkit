@@ -7,6 +7,7 @@ import (
   "log"
   "time"
   "fmt"
+  "os"
 )
 
 // Third party dependencies
@@ -27,8 +28,15 @@ func main() {
   // Parse command line arguments/flags
   urlPtr := flag.String("url", DEFAULT_URL, "URL to check")
   durationPtr := flag.Float64("duration", DEFAULT_DURATION_MIN, "How long to run the check for (in minutes)")
-  frequencyPtr := flag.Int64("frequency", DEFAULT_FREQUENCY_MS, "Frequency at which to run the checks (in milliseconds")
+  frequencyPtr := flag.Int64("frequency", DEFAULT_FREQUENCY_MS, "Frequency at which to run the checks (in milliseconds)")
+  usagePtr := flag.Bool("h", false, "Print usage")
   flag.Parse()
+
+  // Print usage and quit if requested
+  if *usagePtr {
+    flag.Usage()
+    os.Exit(0)
+  }
 
   // Confirm given setup
   log.Printf("Checking URL '%s'\n", *urlPtr);
