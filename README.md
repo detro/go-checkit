@@ -1,6 +1,6 @@
 # (Go) check it
 
-`checkit` it's a command line tool (written in Go, obviously), that runs a sequence of HTTP GET against a given
+`checkit` is a command line tool (written in Go, obviously), that runs a sequence of HTTP GET against a given
 HTTP(S) endpoint, for a configurable duration and frequency. It supports HTTP 1 and 2, over IPv4 and IPv6,
 because Go `net/http` does.
 

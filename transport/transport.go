@@ -31,7 +31,7 @@ func NewTimedTransport() *TimedTransport {
     Proxy:               http.ProxyFromEnvironment,
     Dial:                newTT.Dial,
     TLSHandshakeTimeout: 30 * time.Second,  //< seams reasonable for this scenario
-    DisableKeepAlives: true,    //< again, we are interested in timing/performance: no connection reuse
+    DisableKeepAlives: true,                //< again, we are interested in timing/performance: no connection reuse
   }
 
   return newTT
