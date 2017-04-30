@@ -1,7 +1,7 @@
 # (Go) check it
 
 `checkit` is a command line tool (written in Go, obviously), that runs a sequence of HTTP GET against a given
-HTTP(S) endpoint, for a configurable duration and frequency. It supports HTTP 1 and 2, over IPv4 and IPv6,
+HTTP(S) endpoint, for a configurable duration and frequency. It supports `HTTP/1.x` and `/2`, over IPv4 and IPv6,
 because Go `net/http` does.
 
 ## How does it "check"
@@ -12,15 +12,15 @@ For every HTTP GET we _currently_ measure:
 - round trip time from the moment the request is submitted to the moment it comes back
 - the "total" HTTP GET execution as seen by the application
 
-**NOTE:** The word _currently_ above stands to signify that we could evolve further to instrument the `net/http` library further,
+**NOTE:** The word _currently_ above stands to signify that we could evolve this to instrument the `net/http` library further,
 and gather more precise metrics (like _DNS resolution time_ or separating _send,wait,receive_ times). Those are
 currently left as TODOs.
 
 ### Connection reuse?
 
 All HTTP connection reuse is disabled. On purpose.
-The purpose of this tool is not to optimize for end speed: is to collect accurate data. And so connection reuse would
-definite skew the results if left in place.
+The aim of this tool is not to optimize for speed nor efficiency: is to collect accurate data.
+And so connection reuse would definitely skew the results if left in place.
 
 For details, take a look at the `KeepAlive` options in `transport.go` module.
 
